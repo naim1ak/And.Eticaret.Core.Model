@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace And.Eticaret.UI.WEB.Areas.Admin.Controllers
 {
-    public class DefaultController : Controller
+    public class DefaultController : AdminControllerBase
     {
         // GET: Admin/Default
         public ActionResult Index()

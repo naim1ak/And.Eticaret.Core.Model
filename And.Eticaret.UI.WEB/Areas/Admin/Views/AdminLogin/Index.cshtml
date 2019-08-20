@@ -11,9 +11,14 @@
     <title>Eticaret Admin Girişi</title>
 </head>
 <body>
-    <div> 
+    <form method="post">
         @Html.Label("Email")
-        @Html.TextBox("Sifre")
-    </div>
+        @Html.TextBox("Email")
+        <br />
+        @Html.Label("Şifre")
+        @Html.Password("Password")
+        <br />
+        <button type="submit">Giriş Yap</button>
+    </form>
 </body>
 </html>
