@@ -28,15 +28,22 @@
                 @{
                     if (Session["LoginUser"] == null)
                     {
-                        <a href="Uye-giris">Üye Girişi</a>
+                        <p>
+                            <a href="Uye-Giris">Üye Giriş</a> |
+                            <a href="Uye-Kayit">Üye Kayıt</a>
+                        </p>
+
                     }
                     else
                     {
+                        var usr = Session["LoginUser"] as And.Eticaret.Core.Model.Entity.User;
                         //Üye Giriş Yapılmış
                         <p>
-                            <a href="#">Profilim</a>
-                            <a href="#">Sepetim</a>
-                            <a href="#">Siparişlerim</a>
+
+                            Merhaba @usr.Name  @usr.LastName <br />
+                            <a href="#">Profilim</a> |
+                            <a href="#">Sepetim</a> |
+                            <a href="#">Siparişlerim</a> |
                         </p>
                     }
                 }
