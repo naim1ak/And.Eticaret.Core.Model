@@ -124,6 +124,23 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\css\all.css" />
+    <Content Include="Views\css\all.min.css" />
+    <Content Include="Views\css\brands.css" />
+    <Content Include="Views\css\brands.min.css" />
+    <Content Include="Views\css\fontawesome.css" />
+    <Content Include="Views\css\fontawesome.min.css" />
+    <Content Include="Views\css\regular.css" />
+    <Content Include="Views\css\regular.min.css" />
+    <Content Include="Views\css\solid.css" />
+    <Content Include="Views\css\solid.min.css" />
+    <Content Include="Views\css\svg-with-js.css" />
+    <Content Include="Views\css\svg-with-js.min.css" />
+    <Content Include="Views\css\v4-shims.css" />
+    <Content Include="Views\css\v4-shims.min.css" />
+    <Content Include="Views\webfonts\fa-brands-400.svg" />
+    <Content Include="Views\webfonts\fa-regular-400.svg" />
+    <Content Include="Views\webfonts\fa-solid-900.svg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +153,7 @@
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -165,6 +183,19 @@
     <Content Include="Views\Home\GetMenu.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\CreateUser.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\webfonts\fa-brands-400.eot" />
+    <Content Include="Views\webfonts\fa-brands-400.ttf" />
+    <Content Include="Views\webfonts\fa-brands-400.woff" />
+    <Content Include="Views\webfonts\fa-brands-400.woff2" />
+    <Content Include="Views\webfonts\fa-regular-400.eot" />
+    <Content Include="Views\webfonts\fa-regular-400.ttf" />
+    <Content Include="Views\webfonts\fa-regular-400.woff" />
+    <Content Include="Views\webfonts\fa-regular-400.woff2" />
+    <Content Include="Views\webfonts\fa-solid-900.eot" />
+    <Content Include="Views\webfonts\fa-solid-900.ttf" />
+    <Content Include="Views\webfonts\fa-solid-900.woff" />
+    <Content Include="Views\webfonts\fa-solid-900.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

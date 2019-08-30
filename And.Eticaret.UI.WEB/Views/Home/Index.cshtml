@@ -11,10 +11,16 @@
             <p class="title">@item.Name</p>
             <img src="@item.ImageUrl" />
             <p>
+                @item.Brand
+            </p>
+            <p>
+                @item.Price.ToString("##,## ₺")
+            </p>
+            <p>
                 @item.Description
             </p>
-            <a href="#" class="btn btn-success">İncele</a>
-            <a href="#" class="btn btn-default"><i class="icon-next"></i>Sepete At</a>
+            <a href="/urun/@item.Name.Replace(" ","-")/@item.ID" class="btn btn-success">İncele</a>
+            <a href="#" class="btn btn-default"><i class="fas fa-shopping-basket"></i>Sepete At</a>
         </div>
     }
 }
@@ -33,5 +39,8 @@
 
         .productsBox .title {
             font-weight: bold;  
+        }
+        .productsBox p{
+            text-align:center;
         }
 </style>
