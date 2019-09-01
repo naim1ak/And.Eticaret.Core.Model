@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace And.Eticaret.UI.WEB.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : AndControllerBase
     {
         // GET: Product
         [Route("Urun/{title}/{id}")]

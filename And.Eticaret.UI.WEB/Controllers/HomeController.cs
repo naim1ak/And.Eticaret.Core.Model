@@ -8,12 +8,13 @@ using System.Web.Mvc;
 
 namespace And.Eticaret.UI.WEB.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : AndControllerBase
     {
         AndDB db = new AndDB();
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.IsLogin = this.IsLogin;
             var data = db.Products.OrderByDescending(x => x.CreateDate).Take(5).ToList();
             return View(data);
         }
@@ -39,6 +40,7 @@ namespace And.Eticaret.UI.WEB.Controllers
             if (users.Count == 1)
             {
                 //giriş ok
+                Session["LoginUserID"] = users.FirstOrDefault().ID;
                 Session["LoginUser"] = users.FirstOrDefault();
                 return Redirect("/");
             }

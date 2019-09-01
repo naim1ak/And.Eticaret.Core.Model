@@ -1,7 +1,12 @@
 ﻿@model List<And.Eticaret.Core.Model.Entity.Product>
 @{
     ViewBag.Title = "Index";
+    var isLogin = (bool)ViewBag.IsLogin;
 }
+<div id="andModal" title="Teşekkürler">
+    Ürün Sepete Atılmıştır. <br />
+                            <a href="/Sepetim" class="btn btn-success">Sepete Git</a>
+</div>
 
 <h3>Son 5 Ürün</h3>
 @{
@@ -20,7 +25,13 @@
                 @item.Description
             </p>
             <a href="/urun/@item.Name.Replace(" ","-")/@item.ID" class="btn btn-success">İncele</a>
-            <a href="#" class="btn btn-default"><i class="fas fa-shopping-basket"></i>Sepete At</a>
+            @{
+                if (isLogin)
+                {
+                    <a href="#" data-pID="@item.ID" class="btn btn-default addBasket"><i class="fas fa-shopping-basket"></i>Sepete At</a>
+                }
+            }
+
         </div>
     }
 }
@@ -38,9 +49,35 @@
         }
 
         .productsBox .title {
-            font-weight: bold;  
+            font-weight: bold;
         }
-        .productsBox p{
-            text-align:center;
+
+        .productsBox p {
+            text-align: center;
         }
 </style>
+@section script{
+    <script type="text/javascript">
+        $(function () {
+            $("#andModal").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $(".addBasket").on("click", function () {
+                var pid = $(this).attr("data-pID");
+                $.post("/Basket/AddProduct?productID=" + pid + "&quantity=1", function (data) {
+                    $("#andModal").dialog("open");
+                });
+                return false;
+            });
+        });
+    </script>
+}

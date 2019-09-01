@@ -1,0 +1,24 @@
+﻿@model IEnumerable<And.Eticaret.Core.Model.Entity.Basket>
+
+
+<table class="table">
+    <tr>
+        <th>Ürün</th>
+        <th>Adet</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.ActionLink("Sil", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
